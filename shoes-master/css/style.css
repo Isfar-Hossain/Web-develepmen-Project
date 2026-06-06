@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Utility */
+
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+p{
+    margin-top: 2rem;
+    line-height: 1.6;
+}
+
+h1,h2,h3,h4{
+    line-height: 1;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.text-primary{
+    font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.featured-details{
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    font-size: 0.6rem;
+    position: relative;
+    top: -10px;
+    line-height: 1.2;
+}
+
+.price{
+    font-size: 2rem;
+}
+
+.products-title{
+    font-size: clamp(3rem, calc(3vw + 2rem), 5rem);
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 10px rgb(0 0 0 / 20%);
+    display: block;
+}
+
+.btn{
+    margin-top: 2rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    font-weight: bolder;
+    transition:all 0.3s ease ;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.btn-yellow{
+    background-color:#faa700 ;
+}
+/* Hero */
+
+#hero{
+    background: url(../img/shoe-3.png) no-repeat center, radial-gradient(#444, #111);
+    height: 100vh;
+    background-attachment:fixed;
+    background-blend-mode: multiply;
+    color: #fff;
+}
+
+#hero .hero-container{
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin:0 auto;
+    width: 85%;
+    text-align: center;
+
+}
+
+#hero .primary-title{
+    font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/* Featured featured */
+
+#featured{
+    padding: 7rem 0;
+    color: #000;
+    background: #eee;
+}
+
+#featured .itmes{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-items: center;
+    
+}
+
+#featured .itmes a{
+    height: 80%;
+    width: 75%;
+    display: block;
+    position: relative;
+    transition:all 0.3s ease-in-out ;
+    z-index: 10;
+
+}
+
+#featured .itmes a::after{
+    content: '';
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    background: #2193b0;
+    border-radius: 50%;
+    top: 25px;
+    z-index: -1;
+
+}
+
+#featured .itmes a p{
+    opacity: 0;
+    transition:all 0.3s ease-in-out;
+}
+
+#featured .itmes a:hover,
+#featured .itmes a:hover p{
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+
+
+#featured .itmes a img{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Products */
+
+#products{
+    padding: 8rem 0;
+}
+
+#products .items .item{
+    display: flex;
+    padding: 50px;
+    border-radius: 20px;
+    margin-bottom: 10rem;
+}
+
+#products .items .item-1{
+    background: radial-gradient(#faa700, #e48d00);
+}
+#products .items .item-2{
+    background: radial-gradient(#fce4b3, #eac886);
+    flex-direction: row-reverse;
+}
+#products .items .item-3{
+    background: radial-gradient(#6dd5ed, #2193b0);
+}
+
+#products .items .item a{
+    margin-top: 2rem;
+    display: inline-block;
+}
+
+#products .items .item-1 a{
+    background: #a1173c;
+}
+
+#products .items .item-2 a{
+    background: #2f4858;
+}
+#products .items .item-3 a{
+    background: #008951;
+}
+
+#products .items .item .img{
+    width: 200%;
+    position: relative;
+    left: 10%;
+}
+
+#products .items .item-2 .img{
+    left: -10%;
+}
+
+#products .items .item .img img{
+    width: 100%;
+}
+
+@media(max-width: 990px){
+
+
+    #featured .itmes a:last-child{
+        grid-column: 1 / span 3;
+        justify-items: center;
+    }
+
+    #featured .itmes a{
+        width: 12rem;
+        margin: 0 3rem;
+    }
+}
+
+@media(max-width: 790px){
+    #products .items .item{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    #products .items .item .img{
+        width: 100%;
+        left: 0;
+        top: -5rem;
+    }
+}
+
+@media(max-width: 650px){
+    #featured .itmes{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #featured .itmes a{
+        margin: 4rem 0;
+    }
+
+    #featured .itmes a::after{
+        width: 80%;
+        height: 80%;
+        left: 20px;
+    }
+
+
+    .featured-details{
+        top: 2rem;
+    }
+}
